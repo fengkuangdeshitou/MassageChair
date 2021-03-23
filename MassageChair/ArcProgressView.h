@@ -12,12 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ArcProgressView : UIView
 
 @property(nonatomic,assign)CGFloat progress;
-
-@property(nonatomic,strong)UIColor * progressColor;
-
-@property(nonatomic,strong)UIColor * progressBackgroundColor;
-
-@property(nonatomic,assign)CGFloat lineWidth;
+@property(nonatomic,copy)NSString * time;
 
 @end
 
