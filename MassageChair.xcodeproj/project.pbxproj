@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F01C48C2609866D00BA9B36 /* PanelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F01C4892609866D00BA9B36 /* PanelViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F01C48D2609866D00BA9B36 /* PanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F01C48A2609866D00BA9B36 /* PanelViewController.m */; };
+		0F01C4932609867500BA9B36 /* PanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F01C48B2609866D00BA9B36 /* PanelViewController.xib */; };
+		0F01C498260988E800BA9B36 /* PanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F01C48B2609866D00BA9B36 /* PanelViewController.xib */; };
+		0F01C49D26098D4900BA9B36 /* ArcProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F01C49B26098D4900BA9B36 /* ArcProgressView.h */; };
+		0F01C49E26098D4900BA9B36 /* ArcProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F01C49C26098D4900BA9B36 /* ArcProgressView.m */; };
+		0F01C4AE2609CF2800BA9B36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F01C4AD2609CF2800BA9B36 /* Security.framework */; };
 		BD73BCF02608B0EE00ADD55F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD73BCEF2608B0EE00ADD55F /* AppDelegate.m */; };
 		BD73BCF62608B0EE00ADD55F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD73BCF52608B0EE00ADD55F /* ViewController.m */; };
 		BD73BCF92608B0EE00ADD55F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD73BCF72608B0EE00ADD55F /* Main.storyboard */; };
@@ -45,6 +52,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F01C4892609866D00BA9B36 /* PanelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanelViewController.h; sourceTree = "<group>"; };
+		0F01C48A2609866D00BA9B36 /* PanelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanelViewController.m; sourceTree = "<group>"; };
+		0F01C48B2609866D00BA9B36 /* PanelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanelViewController.xib; sourceTree = "<group>"; };
+		0F01C49B26098D4900BA9B36 /* ArcProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArcProgressView.h; sourceTree = "<group>"; };
+		0F01C49C26098D4900BA9B36 /* ArcProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArcProgressView.m; sourceTree = "<group>"; };
+		0F01C4AD2609CF2800BA9B36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		0F01C4BA2609DA4500BA9B36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BD73BCEB2608B0EE00ADD55F /* MassageChair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MassageChair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD73BCEE2608B0EE00ADD55F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD73BCEF2608B0EE00ADD55F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,12 +98,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F01C4AE2609CF2800BA9B36 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F01C4AC2609CF2800BA9B36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F01C4BA2609DA4500BA9B36 /* Security.framework */,
+				0F01C4AD2609CF2800BA9B36 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD73BCE22608B0EE00ADD55F = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +121,7 @@
 				BD73BD0E2608B10C00ADD55F /* MassageChairSDK */,
 				BD73BD202608B12400ADD55F /* MassageChairBundle */,
 				BD73BCEC2608B0EE00ADD55F /* Products */,
+				0F01C4AC2609CF2800BA9B36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +144,11 @@
 				BD73BCF52608B0EE00ADD55F /* ViewController.m */,
 				BD73BD292608B3D600ADD55F /* BleManager.h */,
 				BD73BD2A2608B3D600ADD55F /* BleManager.m */,
+				0F01C49B26098D4900BA9B36 /* ArcProgressView.h */,
+				0F01C49C26098D4900BA9B36 /* ArcProgressView.m */,
+				0F01C4892609866D00BA9B36 /* PanelViewController.h */,
+				0F01C48A2609866D00BA9B36 /* PanelViewController.m */,
+				0F01C48B2609866D00BA9B36 /* PanelViewController.xib */,
 				BD73BCF72608B0EE00ADD55F /* Main.storyboard */,
 				BD73BCFA2608B0F300ADD55F /* Assets.xcassets */,
 				BD73BCFC2608B0F300ADD55F /* LaunchScreen.storyboard */,
@@ -153,6 +183,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD73BD2B2608B3D600ADD55F /* BleManager.h in Headers */,
+				0F01C49D26098D4900BA9B36 /* ArcProgressView.h in Headers */,
+				0F01C48C2609866D00BA9B36 /* PanelViewController.h in Headers */,
 				BD73BD112608B10C00ADD55F /* MassageChairSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +293,7 @@
 				BD73BCFE2608B0F300ADD55F /* LaunchScreen.storyboard in Resources */,
 				BD73BCFB2608B0F300ADD55F /* Assets.xcassets in Resources */,
 				BD73BCF92608B0EE00ADD55F /* Main.storyboard in Resources */,
+				0F01C498260988E800BA9B36 /* PanelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F01C4932609867500BA9B36 /* PanelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F01C49E26098D4900BA9B36 /* ArcProgressView.m in Sources */,
 				BD73BD2C2608B3D600ADD55F /* BleManager.m in Sources */,
+				0F01C48D2609866D00BA9B36 /* PanelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +491,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VA4HD34922;
+				EXCLUDED_ARCHS = armv7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MassageChair",
+				);
 				INFOPLIST_FILE = MassageChair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,6 +516,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VA4HD34922;
+				EXCLUDED_ARCHS = armv7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MassageChair",
+				);
 				INFOPLIST_FILE = MassageChair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
