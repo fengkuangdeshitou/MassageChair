@@ -11,10 +11,18 @@
             <connections>
                 <outlet property="bleStatusImageView" destination="zAQ-7d-6Ni" id="qp1-tp-kqx"/>
                 <outlet property="bleStatusLabel" destination="mCz-gh-bgn" id="HQX-w2-are"/>
+                <outlet property="directionLabel" destination="ZPj-P5-O3H" id="p7y-kc-2WH"/>
                 <outlet property="endButton" destination="u6M-33-tkd" id="Mhq-ha-lCJ"/>
                 <outlet property="leftView" destination="UIh-R4-YLD" id="sZy-PF-LXe"/>
+                <outlet property="leftViewLeftConstraint" destination="B2i-pe-i4X" id="6gR-GT-eev"/>
+                <outlet property="leftViewTopConstraint" destination="Kqq-YY-Gup" id="zUg-ax-Cal"/>
+                <outlet property="modelLabel" destination="hza-Kp-3nX" id="vrf-Gq-meb"/>
                 <outlet property="progressBackgroundView" destination="cTV-Ct-NPb" id="4zr-7i-kbN"/>
                 <outlet property="rightView" destination="ayY-mX-MWd" id="xIg-hO-LBp"/>
+                <outlet property="rightViewRightConstraint" destination="9HL-Uz-pPT" id="sKW-4V-MBi"/>
+                <outlet property="rightViewTopConstraint" destination="u7p-ag-Nf2" id="j61-43-Vie"/>
+                <outlet property="speedLabel" destination="vgJ-8B-FwV" id="1Oz-Ng-HaW"/>
+                <outlet property="temperatureLabel" destination="NkW-Gm-mqA" id="k88-8N-MR4"/>
                 <outlet property="timingButton" destination="4of-yC-CYw" id="fvm-Qw-qIs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="voiceSwitch" destination="TC8-3a-miI" id="Zi4-ak-FSo"/>
@@ -144,6 +152,10 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-qg-NZU">
                                     <rect key="frame" x="29.5" y="66" width="45" height="45"/>
                                     <state key="normal" image="icon_wd01"/>
+                                    <state key="highlighted" image="icon_wd02"/>
+                                    <connections>
+                                        <action selector="directionClickAction:" destination="-1" eventType="touchUpInside" id="Koz-In-Guh"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按摩模式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIt-uw-q8r">
                                     <rect key="frame" x="23" y="119" width="57.5" height="17"/>
@@ -184,6 +196,10 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mL-IF-BQU">
                                     <rect key="frame" x="29.5" y="66" width="45" height="45"/>
                                     <state key="normal" image="icon_qd01"/>
+                                    <state key="highlighted" image="icon_qd02"/>
+                                    <connections>
+                                        <action selector="speedClickAction:" destination="-1" eventType="touchUpInside" id="AWl-K6-dPM"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按摩强度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYd-yc-FKd">
                                     <rect key="frame" x="23" y="119" width="57.5" height="17"/>
@@ -224,6 +240,10 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqI-mW-zrO">
                                     <rect key="frame" x="29.5" y="65.5" width="45" height="45"/>
                                     <state key="normal" image="icon_fz01"/>
+                                    <state key="highlighted" image="icon_fz02"/>
+                                    <connections>
+                                        <action selector="temperatureClickAction:" destination="-1" eventType="touchUpInside" id="4Wl-Kn-dm5"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="红外加热" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRz-HZ-DyF">
                                     <rect key="frame" x="23" y="118.5" width="57.5" height="17"/>
@@ -263,7 +283,11 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfN-HU-Xyk">
                                     <rect key="frame" x="29.5" y="65.5" width="45" height="45"/>
-                                    <state key="normal" image="icon_zn"/>
+                                    <state key="normal" image="icon_zn01"/>
+                                    <state key="highlighted" image="icon_zn02"/>
+                                    <connections>
+                                        <action selector="modelClickAction:" destination="-1" eventType="touchUpInside" id="zp7-FH-85Z"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能模式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dds-w3-be9">
                                     <rect key="frame" x="23" y="118.5" width="57.5" height="17"/>
@@ -385,10 +409,14 @@
     <resources>
         <image name="icon_ble02" width="17.5" height="17.5"/>
         <image name="icon_fz01" width="45" height="45"/>
+        <image name="icon_fz02" width="45" height="45"/>
         <image name="icon_qd01" width="45" height="45"/>
+        <image name="icon_qd02" width="45" height="45"/>
         <image name="icon_tiom" width="20" height="20"/>
         <image name="icon_wd01" width="45" height="45"/>
-        <image name="icon_zn" width="45" height="45"/>
+        <image name="icon_wd02" width="45" height="45"/>
+        <image name="icon_zn01" width="45" height="45"/>
+        <image name="icon_zn02" width="45" height="45"/>
         <image name="icon_zt" width="20" height="20"/>
     </resources>
 </document>
