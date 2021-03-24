@@ -37,6 +37,13 @@ static BleManager *_manager = nil;
     [self.centralManager scanForPeripheralsWithServices:nil options:option];
 }
 
+- (void)writeValueToBle:(NSDictionary *)vaue{
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:vaue options:NSJSONWritingFragmentsAllowed error:nil];
+    // 将指令写入蓝牙
+    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+}
+
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central{
     switch (central.state) {
         case CBManagerStateUnknown:

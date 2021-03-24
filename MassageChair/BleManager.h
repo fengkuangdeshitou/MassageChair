@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareInstance;
 
+- (void)writeValueToBle:(NSDictionary *)vaue;
+
 @end
 
 NS_ASSUME_NONNULL_END
