@@ -25,13 +25,14 @@
     [btn addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    NSString * appId = @"a0d9ba8e8a424431b2cd36d63bbe8955";
+    NSString * key = @"2c660db86055205474f1bb5558f1f9a3";
+    NSString * appId = @"b1cccc57045441398b7a100fbd460c8f";
     NSString * bizId = @"1101999999";
-    NSString * timestamps = @"1616581839725";
+    NSString * timestamps = @"1616583229519";
     NSString * body = [NSString stringWithFormat:@"{\"%@\":\"%@\"}",@"data",@"MgMlbWS8n4dHLxHBT4f8K4lp6/5Pw/cPBrmd1ACROHDqTpiFhJR+3lnaOZgAWrfxAchKnGD+2NpGXmYUAW/WfM4rhHb284MAhaxeqkMpgTrdDmiB3O7a4obRjA=="];
     
     
-    NSString * string = [NSString stringWithFormat:@"appId%@bizId%@timestamps%@%@",appId,bizId,timestamps,body];
+    NSString * string = [NSString stringWithFormat:@"%@appId%@bizId%@timestamps%@%@",key,appId,bizId,timestamps,body];
     NSLog(@"string=%@",string);
     
     NSString * sign = [self sha256HashFor:string];
