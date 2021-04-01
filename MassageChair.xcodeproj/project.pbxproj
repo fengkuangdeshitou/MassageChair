@@ -14,6 +14,12 @@
 		0F01C49D26098D4900BA9B36 /* ArcProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F01C49B26098D4900BA9B36 /* ArcProgressView.h */; };
 		0F01C49E26098D4900BA9B36 /* ArcProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F01C49C26098D4900BA9B36 /* ArcProgressView.m */; };
 		0F01C4AE2609CF2800BA9B36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F01C4AD2609CF2800BA9B36 /* Security.framework */; };
+		0F1BDA1426157FE900AB0C25 /* NSData+CRC16.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F1BDA1226157FE900AB0C25 /* NSData+CRC16.h */; };
+		0F1BDA1526157FE900AB0C25 /* NSData+CRC16.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1BDA1326157FE900AB0C25 /* NSData+CRC16.m */; };
+		0F1BDA1626157FE900AB0C25 /* NSData+CRC16.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1BDA1326157FE900AB0C25 /* NSData+CRC16.m */; };
+		0F1BDB642615982200AB0C25 /* NSString+SwitchData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F1BDB622615982200AB0C25 /* NSString+SwitchData.h */; };
+		0F1BDB652615982200AB0C25 /* NSString+SwitchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1BDB632615982200AB0C25 /* NSString+SwitchData.m */; };
+		0F1BDB662615982200AB0C25 /* NSString+SwitchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1BDB632615982200AB0C25 /* NSString+SwitchData.m */; };
 		BD73BCF02608B0EE00ADD55F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD73BCEF2608B0EE00ADD55F /* AppDelegate.m */; };
 		BD73BCF62608B0EE00ADD55F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD73BCF52608B0EE00ADD55F /* ViewController.m */; };
 		BD73BCF92608B0EE00ADD55F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD73BCF72608B0EE00ADD55F /* Main.storyboard */; };
@@ -59,6 +65,10 @@
 		0F01C49C26098D4900BA9B36 /* ArcProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArcProgressView.m; sourceTree = "<group>"; };
 		0F01C4AD2609CF2800BA9B36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		0F01C4BA2609DA4500BA9B36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0F1BDA1226157FE900AB0C25 /* NSData+CRC16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+CRC16.h"; sourceTree = "<group>"; };
+		0F1BDA1326157FE900AB0C25 /* NSData+CRC16.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+CRC16.m"; sourceTree = "<group>"; };
+		0F1BDB622615982200AB0C25 /* NSString+SwitchData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SwitchData.h"; sourceTree = "<group>"; };
+		0F1BDB632615982200AB0C25 /* NSString+SwitchData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SwitchData.m"; sourceTree = "<group>"; };
 		BD73BCEB2608B0EE00ADD55F /* MassageChair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MassageChair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD73BCEE2608B0EE00ADD55F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD73BCEF2608B0EE00ADD55F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +154,10 @@
 				BD73BCF52608B0EE00ADD55F /* ViewController.m */,
 				BD73BD292608B3D600ADD55F /* BleManager.h */,
 				BD73BD2A2608B3D600ADD55F /* BleManager.m */,
+				0F1BDA1226157FE900AB0C25 /* NSData+CRC16.h */,
+				0F1BDA1326157FE900AB0C25 /* NSData+CRC16.m */,
+				0F1BDB622615982200AB0C25 /* NSString+SwitchData.h */,
+				0F1BDB632615982200AB0C25 /* NSString+SwitchData.m */,
 				0F01C49B26098D4900BA9B36 /* ArcProgressView.h */,
 				0F01C49C26098D4900BA9B36 /* ArcProgressView.m */,
 				0F01C4892609866D00BA9B36 /* PanelViewController.h */,
@@ -182,6 +196,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1BDB642615982200AB0C25 /* NSString+SwitchData.h in Headers */,
+				0F1BDA1426157FE900AB0C25 /* NSData+CRC16.h in Headers */,
 				BD73BD2B2608B3D600ADD55F /* BleManager.h in Headers */,
 				0F01C49D26098D4900BA9B36 /* ArcProgressView.h in Headers */,
 				0F01C48C2609866D00BA9B36 /* PanelViewController.h in Headers */,
@@ -320,7 +336,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD73BCF62608B0EE00ADD55F /* ViewController.m in Sources */,
+				0F1BDB652615982200AB0C25 /* NSString+SwitchData.m in Sources */,
 				BD73BCF02608B0EE00ADD55F /* AppDelegate.m in Sources */,
+				0F1BDA1526157FE900AB0C25 /* NSData+CRC16.m in Sources */,
 				BD73BD012608B0F300ADD55F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,7 +348,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F01C49E26098D4900BA9B36 /* ArcProgressView.m in Sources */,
+				0F1BDB662615982200AB0C25 /* NSString+SwitchData.m in Sources */,
 				BD73BD2C2608B3D600ADD55F /* BleManager.m in Sources */,
+				0F1BDA1626157FE900AB0C25 /* NSData+CRC16.m in Sources */,
 				0F01C48D2609866D00BA9B36 /* PanelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

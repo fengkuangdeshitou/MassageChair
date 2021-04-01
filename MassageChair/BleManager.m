@@ -120,7 +120,8 @@ static BleManager *_manager = nil;
 //        if ([characteristic.UUID.UUIDString isEqualToString:@"2A24"]) {
             self.characteristic = characteristic;
             [self.peripheral setNotifyValue:YES forCharacteristic:self.characteristic];
-            NSData *data = [@"11" dataUsingEncoding:NSUTF8StringEncoding];
+            Byte byte[] = {0x5A,0x5A,81,0x02,0x02,0x0D};
+            NSData * data = [[NSData alloc] initWithBytes:byte length:8];
             // 将指令写入蓝牙
             [self.peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
 //        }

@@ -7,7 +7,8 @@
 
 #import "ViewController.h"
 #import <MassageChairSDK/PanelViewController.h>
-#import <CommonCrypto/CommonCrypto.h>
+#import "NSData+CRC16.h"
+#import "NSString+SwitchData.h"
 
 @interface ViewController ()
 
@@ -15,9 +16,64 @@
 
 @implementation ViewController
 
+// int转两个字节Byte
+- (NSData *)dataFromShort:(short)value {
+    Byte bytes[2] = {};
+    for (int i = 0; i < 2; i++) {
+        int offset = 16 - (i + 1) * 8;
+        bytes[i] = (Byte) ((value >> offset) & 0xff);
+    }
+    NSData *data = [[NSData alloc] initWithBytes:bytes length:2];
+    return data;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    Byte byteData[8] = {0};
+    byteData[0] = 0x51;
+    byteData[1] = 0x81;
+    NSLog(@"=====%x",byteData[0]);
+    
+    NSData *data1 = [NSData dataWithBytes:[self dataFromShort:81].bytes length:[self dataFromShort:81].length];
+
+    NSLog(@"测试%@",data1);
+    
+    
+    Byte byte[] = {0x5A,0x5A,0x81,0x02,0x02,0x0D};
+    NSData * data = [[NSData alloc] initWithBytes:byte length:6];
+    NSLog(@"data=%d",[data crc16:data len:0]);
+    
+    
+    int jsonlen = 81;
+    char *p_json = (char *)&jsonlen;
+    char str_json[4] = {0};
+    
+    for(int i= 0 ;i < 4 ;i++)
+    {
+        str_json[i] = *p_json;
+        p_json ++;
+    }
+    
+    
+    //十进制->十六进制
+    Byte bytes[]={0xA6,0x27,0x0A};
+    NSString *strIdL = [NSString stringWithFormat:@"%@",[[NSString alloc]initWithFormat:@"%02lx",(long)bytes[1]]];
+    NSLog(@"stridl=%@",strIdL);
+    
+    //十六进制->十进制
+    NSString *rechargeInfo = @"0x51";
+    NSString *cardId2 = [rechargeInfo substringWithRange:NSMakeRange(2,2)];
+    cardId2 = [NSString stringWithFormat:@"%ld",strtoul([cardId2 UTF8String],0,16)];
+    NSLog(@"16进制:51->10:进制 %@",cardId2);
+    
+    NSLog(@"10进制:81->16进制:%@",[@"81" decimalToHex]);
+    
+    NSLog(@"16进制:51->10:进制 %@",[@"51" hexToDecimal]);
+    
+    NSLog(@"16进制转data:%@",[[@"81" decimalToHex] convertBytesStringToData]);
     
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.frame = CGRectMake(100, 100, 100, 100);
@@ -25,36 +81,7 @@
     [btn addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    NSString * key = @"2c660db86055205474f1bb5558f1f9a3";
-    NSString * appId = @"b1cccc57045441398b7a100fbd460c8f";
-    NSString * bizId = @"1101999999";
-    NSString * timestamps = @"1616583229519";
-    NSString * body = [NSString stringWithFormat:@"{\"%@\":\"%@\"}",@"data",@"MgMlbWS8n4dHLxHBT4f8K4lp6/5Pw/cPBrmd1ACROHDqTpiFhJR+3lnaOZgAWrfxAchKnGD+2NpGXmYUAW/WfM4rhHb284MAhaxeqkMpgTrdDmiB3O7a4obRjA=="];
-    
-    
-    NSString * string = [NSString stringWithFormat:@"%@appId%@bizId%@timestamps%@%@",key,appId,bizId,timestamps,body];
-    NSLog(@"string=%@",string);
-    
-    NSString * sign = [self sha256HashFor:string];
-    NSLog(@"sign=%@",sign);
-    
 }
-
-//SHA256加密
-- (NSString*)sha256HashFor:(NSString*)input{
-    const char* str = [input UTF8String];
-    unsigned char result[CC_SHA256_DIGEST_LENGTH];
-    CC_SHA256(str, (CC_LONG)strlen(str), result);
-
-    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH*2];
-    for(int i = 0; i<CC_SHA256_DIGEST_LENGTH; i++)
-    {
-        [ret appendFormat:@"%02x",result[i]];
-    }
-    ret = (NSMutableString *)[ret uppercaseString];
-    return ret;
-}
-
 
 - (void)action{
     PanelViewController * panel = [[PanelViewController alloc] init];
