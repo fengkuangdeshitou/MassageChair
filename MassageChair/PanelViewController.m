@@ -176,6 +176,7 @@
             break;
     }
     self.directionLabel.text = directionString;
+    [self.mamager writeValueToBle:@""];
 }
 
 /// 速度切换
